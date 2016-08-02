@@ -12,7 +12,7 @@ class Systemd
 			unset_environment = 1 if unset_environment == true
 			unset_environment = 0 if unset_environment == false
 
-			Systemd._notify(unset_environment,state)
+			CSystemd.notify(unset_environment,state)
 		end
 	end
 end
