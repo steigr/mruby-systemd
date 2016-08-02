@@ -12,8 +12,7 @@ mrb_c_systemd_notify(mrb_state *mrb, mrb_value self)
 	int cunset_environment;
 	cstate = mrb_string_value_cstr(mrb, &state);
 	cunset_environment = (int) unset_environment;
-	sd_notify(cunset_environment,cstate);
-	return self;
+	return mrb_fixnum_value(sd_notify(cunset_environment,cstate));
 }
 
 void
